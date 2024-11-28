@@ -1,0 +1,10 @@
+platform :ios, '11.0'
+
+target 'Daily' do
+  pod 'Masonry'
+  pod 'YYModel', '~> 1.0.4'
+  pod 'AFNetworking', '~> 4.0'
+  pod 'SDWebImage', '~> 5.0'
+  pod 'FMDB'
+  pod 'LookinServer', :configurations => ['Debug']
+end
