@@ -32,18 +32,19 @@
 }
 - (void)judgeDate {
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"MM-dd"];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd"];
     NSString* str0 = [dateFormatter stringFromDate:self.nowDate];
-    NSString* str = [str0 substringWithRange: NSMakeRange(0, 2)];
+    NSString* str = [str0 substringWithRange: NSMakeRange(5, 2)];
+    NSString* str1 = [str0 substringWithRange:NSMakeRange(0, 4)];
     NSDictionary* monthDicty = @{@"01":@"正月",@"02":@"杏月",@"03":@"桃月",@"04":@"槐月",@"05":@"榴月",@"06":@"荷月",@"07":@"霜月",@"08":@"桂月",@"09":@"玄月",@"10":@"阳月",@"11":@"冬月",@"12":@"腊月"};
-    //    NSDictionary* dataDicty = @{@"1":@"一",@"2":@"二",@"3":@"三",@"4":@"四",@"5":@"五",@"6":@"六",@"7":@"七",@"8":@"八",@"9":@"九"};
-    NSString* str2 = [str0 substringWithRange: NSMakeRange(3, 1)];
-    NSString* str3 = [str0 substringWithRange:NSMakeRange(4, 1)];
+//    NSDictionary* dataDicty = @{@"1":@"一",@"2":@"二",@"3":@"三",@"4":@"四",@"5":@"五",@"6":@"六",@"7":@"七",@"8":@"八",@"9":@"九"};
+    NSString* str2 = [str0 substringWithRange: NSMakeRange(8, 1)];
+    NSString* str3 = [str0 substringWithRange:NSMakeRange(9, 1)];
     self.monthString = [monthDicty[str] copy];
     self.dateString = [NSString stringWithFormat:@"%@%@", str2, str3];
     self.date = [NSString stringWithFormat:@"%@%@", str2, str3];
     self.month = [str copy];
-    self.headString = [NSString stringWithFormat:@"2024%@%@%@", str, str2, str3];
+    self.headString = [NSString stringWithFormat:@"%@%@%@%@",str1 , str, str2, str3];
 }
 - (NSMutableArray*)yesterDay:(NSInteger) section {
     NSInteger dateNum = [self.date intValue];
