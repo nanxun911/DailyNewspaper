@@ -39,7 +39,6 @@
 		E9323BBD2CCCE4F4008C17CF /* dianzan.png in Resources */ = {isa = PBXBuildFile; fileRef = E9323BBC2CCCE4F4008C17CF /* dianzan.png */; };
 		E9323BC32CCCE55D008C17CF /* shangchuan-4.png in Resources */ = {isa = PBXBuildFile; fileRef = E9323BC22CCCE55D008C17CF /* shangchuan-4.png */; };
 		E9323BC72CCCE744008C17CF /* shoucang-3.png in Resources */ = {isa = PBXBuildFile; fileRef = E9323BC62CCCE744008C17CF /* shoucang-3.png */; };
-		E9323BD32CCD0EE4008C17CF /* WechatIMG17.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E9323BD22CCD0EE4008C17CF /* WechatIMG17.jpg */; };
 		E9323BD62CCFBB29008C17CF /* TopWebContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9323BD52CCFBB29008C17CF /* TopWebContentViewController.m */; };
 		E9323BD92CD111C3008C17CF /* CommentsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E9323BD82CD111C3008C17CF /* CommentsModel.m */; };
 		E9323BDC2CD112DD008C17CF /* NewsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E9323BDB2CD112DD008C17CF /* NewsModel.m */; };
@@ -66,6 +65,7 @@
 		E9323C5E2CE4F4D8008C17CF /* StarModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E9323C5D2CE4F4D8008C17CF /* StarModel.m */; };
 		E9F8EEEC2CE6192D0040ABA6 /* shoucang-4.png in Resources */ = {isa = PBXBuildFile; fileRef = E9F8EEEB2CE6192D0040ABA6 /* shoucang-4.png */; };
 		E9F8EEEE2CE61E520040ABA6 /* dianzan-3.png in Resources */ = {isa = PBXBuildFile; fileRef = E9F8EEED2CE61E510040ABA6 /* dianzan-3.png */; };
+		E9F8F0A42D33B9AF0040ABA6 /* WechatIMG17.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E9F8F0A32D33B9AE0040ABA6 /* WechatIMG17.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -141,7 +141,6 @@
 		E9323BBC2CCCE4F4008C17CF /* dianzan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dianzan.png; sourceTree = "<group>"; };
 		E9323BC22CCCE55D008C17CF /* shangchuan-4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "shangchuan-4.png"; sourceTree = "<group>"; };
 		E9323BC62CCCE744008C17CF /* shoucang-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "shoucang-3.png"; sourceTree = "<group>"; };
-		E9323BD22CCD0EE4008C17CF /* WechatIMG17.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = WechatIMG17.jpg; path = "../../../Library/Mobile Documents/com~apple~CloudDocs/WechatIMG17.jpg"; sourceTree = "<group>"; };
 		E9323BD42CCFBB29008C17CF /* TopWebContentViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TopWebContentViewController.h; sourceTree = "<group>"; };
 		E9323BD52CCFBB29008C17CF /* TopWebContentViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TopWebContentViewController.m; sourceTree = "<group>"; };
 		E9323BD72CD111C3008C17CF /* CommentsModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommentsModel.h; sourceTree = "<group>"; };
@@ -188,6 +187,7 @@
 		E9323C5D2CE4F4D8008C17CF /* StarModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StarModel.m; sourceTree = "<group>"; };
 		E9F8EEEB2CE6192D0040ABA6 /* shoucang-4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "shoucang-4.png"; sourceTree = "<group>"; };
 		E9F8EEED2CE61E510040ABA6 /* dianzan-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dianzan-3.png"; sourceTree = "<group>"; };
+		E9F8F0A32D33B9AE0040ABA6 /* WechatIMG17.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = WechatIMG17.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -290,7 +290,7 @@
 				E9323C0D2CE38BE6008C17CF /* shezhi-2.png */,
 				E9F8EEEB2CE6192D0040ABA6 /* shoucang-4.png */,
 				E9323BC62CCCE744008C17CF /* shoucang-3.png */,
-				E9323BD22CCD0EE4008C17CF /* WechatIMG17.jpg */,
+				E9F8F0A32D33B9AE0040ABA6 /* WechatIMG17.jpg */,
 				E9323BBC2CCCE4F4008C17CF /* dianzan.png */,
 				E9323B9E2CC661D3008C17CF /* vertical_line.png */,
 				E9323BC22CCCE55D008C17CF /* shangchuan-4.png */,
@@ -516,9 +516,9 @@
 				E9F8EEEE2CE61E520040ABA6 /* dianzan-3.png in Resources */,
 				E9323BC32CCCE55D008C17CF /* shangchuan-4.png in Resources */,
 				E9323B9F2CC661D3008C17CF /* vertical_line.png in Resources */,
+				E9F8F0A42D33B9AF0040ABA6 /* WechatIMG17.jpg in Resources */,
 				E9323C0E2CE38BE7008C17CF /* shezhi-2.png in Resources */,
 				E9323B412CC5DCED008C17CF /* Base in Resources */,
-				E9323BD32CCD0EE4008C17CF /* WechatIMG17.jpg in Resources */,
 				E9323BF62CD8F1D5008C17CF /* dianzan-2.png in Resources */,
 				E9F8EEEC2CE6192D0040ABA6 /* shoucang-4.png in Resources */,
 				E9323C0C2CE38BB9008C17CF /* yueliang.png in Resources */,

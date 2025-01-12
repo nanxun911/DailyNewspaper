@@ -156,6 +156,8 @@
     if (section >= self.ary.count) {
         self.loading = NO;
         self.iView.scrollView.contentSize = CGSizeMake(self.view.bounds.size.width * section, 0);
+        //[self loadLabel:self.ary.count - 1 andView:self.iView];
+        self.section = self.ary.count - 1;
         return;
     }
     NSString* string = [NSString stringWithFormat:@"https://daily.zhihu.com/story/%ld", [self.ary[section] integerValue]];
