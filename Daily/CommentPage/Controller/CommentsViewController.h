@@ -9,7 +9,7 @@
 #import "CommentsView.h"
 #import "CommentsModel.h"
 #import "CommentsTableViewCell.h"
-#import "Manger.h"
+#import "NetworkingManger.h"
 #import "SDWebImage.h"
 #import "NSDate+JudgeDay.h"
 #import "UITextView+JudgeHeight.h"

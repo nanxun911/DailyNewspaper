@@ -29,12 +29,12 @@
     dispatch_group_t group = dispatch_group_create();
     NSMutableArray* ary = [NSMutableArray array];
     dispatch_group_enter(group);
-    [[Manger sharedManger] shortCommentContent:^(CommentsModel * _Nonnull model) {
+    [[NetworkingManger sharedManger] shortCommentContent:^(CommentsModel * _Nonnull model) {
         self.shortCommentsModel = model;
         dispatch_group_leave(group);
     } andNsstring:string];
     dispatch_group_enter(group);
-    [[Manger sharedManger] longCommentContent:^(CommentsModel * _Nonnull model) {
+    [[NetworkingManger sharedManger] longCommentContent:^(CommentsModel * _Nonnull model) {
         self.LongCommentsModel = model;
         dispatch_group_leave(group);
     } andNsstring:string];
@@ -103,7 +103,7 @@
             NSLog(@"%@", [cell.commentText stringOfLine:1]);
             //NSLog(@"行数为%d", [cell.commentText getLinesWithLabelWidth:cell.commentText.contentSize.width]);
             //NSLog(@"%d", [cell.commentText judgeHeight]);
-            if ([cell.commentText getLinesWithLabelWidth:(cell.commentText.bounds.size.width - cell.commentText.textContainerInset.left - cell.commentText.textContainerInset.right - cell.commentText.textContainer.lineFragmentPadding * 2)] > 2 && !self.shortCommentsModel.comments[indexPath.row].isOpen) {
+            if ([cell.commentText judgeHeight] && !self.shortCommentsModel.comments[indexPath.row].isOpen) {
                 
                 NSString* string = @"…展开";
                 //NSString* contentString = [NSString stringWithFormat:@"%@%@", str, string];
@@ -288,7 +288,7 @@
 
 - (BOOL)textView:(UITextView *)textView shouldInteractWithURL:(NSURL *)URL inRange:(NSRange)characterRange {
     if ([[URL scheme] isEqualToString:@"didOpenClose"]) {
-        //点击了“展开”或”收起“，通过代理或者block回调，让持有tableView的控制器去刷新单行Cell
+        //点击了“展开”或”收起“，通过代理回调，让持有tableView的控制器去刷新单行Cell
        // NSLog(@"%@", [textView.superview.superview class]);
         CommentsTableViewCell* cell = (CommentsTableViewCell*)textView.superview.superview;
         NSIndexPath* indexpath = [self.iView.tableView indexPathForCell:cell];

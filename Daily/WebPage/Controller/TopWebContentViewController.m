@@ -1,17 +1,17 @@
 //
-//  WebContentViewController.m
+//  TopWebContentViewController.m
 //  Daily
 //
-//  Created by nanxun on 2024/10/26.
+//  Created by nanxun on 2024/10/28.
 //
 
-#import "WebContentViewController.h"
+#import "TopWebContentViewController.h"
 
-@interface WebContentViewController ()
+@interface TopWebContentViewController ()
 
 @end
 
-@implementation WebContentViewController
+@implementation TopWebContentViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -41,11 +41,25 @@
     NSURLRequest* requset = [NSURLRequest requestWithURL:url];
     //NSLog(@"%ld", self.ary.count);
     self.loading = YES;
+    if (self.section == self.ary.count - 1) {
+        NSLog(@"点击最后一张视图");
+        [self.iView setScrollContent:self.section];
+        [self.iView setWebPoint:self.section];
+        [self.iView.webContentView.webView loadRequest:requset];
+        [self addTargetToButton:self.iView andSection:0];
+        [self loadLabel:self.section andView:self.iView];
+    } else {
+        [self.iView setScrollContent:self.section + 2];
+        [self.iView setWebPoint:self.section];
+        [self.iView.webContentView.webView loadRequest:requset];
+        [self addTargetToButton:self.iView andSection:0];
+        [self loadLabel:self.section andView:self.iView];
+    }
     [self.iView setScrollContent:self.section + 2];
     [self.iView setWebPoint:self.section];
     [self.iView.webContentView.webView loadRequest:requset];
-    [self loadLabel:self.section andView:self.iView];
     [self addTargetToButton:self.iView andSection:0];
+    [self loadLabel:self.section andView:self.iView];
     [self searchInDataBase];
 //    NSLog(@"%@", self.iView.ary);
 //    NSLog(@"%ld", self.section);
@@ -62,7 +76,7 @@
 //                [button addTarget:self action:@selector(turnBack) forControlEvents:UIControlEventTouchUpInside];
 //                break;
 //            case 2:
-//                
+//
 //                break;
 //            case 4:
 //                break;
@@ -81,13 +95,6 @@
 - (void)turnBack {
     [self.navigationController popViewControllerAnimated:YES];
 }
-- (void)pushComment {
-    CommentsViewController* viewController = [[CommentsViewController alloc] init];
-    //viewController.dicty = [NSMutableDictionary dictionary];
-    //viewController.dicty[[NSNumber numberWithInteger:self.section]] = self.ary[self.section];
-    viewController.num = [self.ary[self.section] integerValue];
-    [self.navigationController pushViewController:viewController animated:YES];
-}
 - (void)HeighlightPress:(UIButton*)button {
     button.selected = !button.selected;
 }
@@ -96,57 +103,45 @@
     [self.navigationController setNavigationBarHidden:YES animated:YES];
 }
 #pragma mark scrollView
-//-(void)scrollViewDidScroll:(UIScrollView *)scrollView {
-//    CGFloat x = scrollView.contentOffset.x;
-//    CGFloat width = scrollView.contentSize.width;
-//    CGFloat screenWidth = self.view.bounds.size.width;
-//    if (x > width - 2 * screenWidth && !self.loading) {
-//        NSLog(@"后面的内容");
-//        self.loading = YES;
-//        self.section = (x / screenWidth + 1);
-//        self.iView.scrollView.contentSize = CGSizeMake(self.view.bounds.size.width * (_section + 2), 0);
-//        [self scrollViewAfter:(x / screenWidth + 1)];
-//            //[self scrollViewAfter:(x / screenWidth + 2)];
-//    } else if (!self.loading){
-//        NSLog(@"前面的内容");
-//        self.loading = YES;
-//        self.section = x / screenWidth;
-//        [self scrollViewBefore:x / screenWidth];
-//    }
-//}
--(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView {
     CGFloat x = scrollView.contentOffset.x;
     CGFloat width = scrollView.contentSize.width;
     CGFloat screenWidth = self.view.bounds.size.width;
-    if (x > width - 2 * screenWidth) {
+    
+    if (x > width - 2 * screenWidth && !self.loading) {
         NSLog(@"后面的内容");
         self.loading = YES;
-        self.section = x / screenWidth;
-        self.iView.scrollView.contentSize = CGSizeMake(self.view.bounds.size.width * (_section + 2), 0);
-        [self scrollViewAfter:x / screenWidth];
+        self.section = (x / screenWidth + 1);
+        [self scrollViewAfter:(x / screenWidth + 1)];
             //[self scrollViewAfter:(x / screenWidth + 2)];
-    } else {
+    } else if (!self.loading){
         NSLog(@"前面的内容");
         self.loading = YES;
         self.section = x / screenWidth;
         [self scrollViewBefore:x / screenWidth];
     }
 }
+- (void)pushComment {
+    
+    CommentsViewController* viewController = [[CommentsViewController alloc] init];
+    //viewController.dicty = [NSMutableDictionary dictionary];
+    //viewController.dicty[[NSNumber numberWithInteger:self.section]] = self.ary[self.section];
+    viewController.num = [self.ary[self.section] integerValue];
+    [self.navigationController pushViewController:viewController animated:YES];
+}
 - (void)scrollViewBefore:(NSUInteger) section {
     NSString* string = [NSString stringWithFormat:@"https://daily.zhihu.com/story/%ld", [self.ary[section] integerValue]];
     if (![self.webSet containsObject:string]) {
-        
-            WebContentView* ContentView = [[WebContentView alloc] initWithFrame:CGRectMake(self.view.bounds.size.width * (section), 0, self.view.bounds.size.width, self.view.bounds.size.height)];
-            //ContentView.webView = [[WKWebView alloc] initWithFrame:self.view.bounds];
-            ContentView.webView.navigationDelegate = self;
-            [self.webSet addObject:string];
-            [self loadLabel:section andView:self.iView];
-            NSURL* url = [NSURL URLWithString:string];
-            NSURLRequest* request = [NSURLRequest requestWithURL:url];
-            [ContentView.webView loadRequest:request];
-            [self.iView.scrollView addSubview:ContentView];
-            [self searchInDataBase];
-        
+        WebContentView* ContentView = [[WebContentView alloc] initWithFrame:CGRectMake(self.view.bounds.size.width * (section), 0, self.view.bounds.size.width, self.view.bounds.size.height)];
+        //ContentView.webView = [[WKWebView alloc] initWithFrame:self.view.bounds];
+        ContentView.webView.navigationDelegate = self;
+        [self.webSet addObject:string];
+        [self loadLabel:section andView:self.iView];
+        NSURL* url = [NSURL URLWithString:string];
+        NSURLRequest* request = [NSURLRequest requestWithURL:url];
+        [ContentView.webView loadRequest:request];
+        [self.iView.scrollView addSubview:ContentView];
+        [self searchInDataBase];
     } else {
         NSLog(@"1不需要加载");
         [self loadLabel:section andView:self.iView];
@@ -159,14 +154,10 @@
 -(void)scrollViewAfter:(NSUInteger) section {
     NSLog(@"%ld %ld", section, self.ary.count);
     if (section >= self.ary.count) {
-        NSLog(@"加载新的内容");
-        //self.iView.scrollView.contentSize = CGSizeMake(self.view.bounds.size.width * (section + 2), 0);
-        //NSString* str = [NSString stringWithFormat:@"%ld", [self.dateString integerValue]];
-        //self.dateString = [NSMutableString stringWithFormat:@"%ld", [self.dateString integerValue] - 1];
-        NSString* str =  [self.dateModel computingTime:self.dateModel.headString andDay:self.modelNum - 1];
-        [self loadNewDate:str andSetcion:section];
-        self.modelNum += 1;
-       // [self loadLabel:section andView:self.iView];
+        self.loading = NO;
+        self.iView.scrollView.contentSize = CGSizeMake(self.view.bounds.size.width * section, 0);
+        //[self loadLabel:self.ary.count - 1 andView:self.iView];
+        self.section = self.ary.count - 1;
         return;
     }
     NSString* string = [NSString stringWithFormat:@"https://daily.zhihu.com/story/%ld", [self.ary[section] integerValue]];
@@ -174,7 +165,11 @@
     NSLog(@"%@", self.webSet);
     if (![self.webSet containsObject:string]) {
         NSLog(@"加载后面的内容");
-        
+        if (section == self.ary.count - 1) {
+            self.iView.scrollView.contentSize = CGSizeMake(self.view.bounds.size.width * (section + 1), 0);
+        } else {
+            self.iView.scrollView.contentSize = CGSizeMake(self.view.bounds.size.width * (section + 2), 0);
+        }
         WebContentView* ContentView = [[WebContentView alloc] initWithFrame:CGRectMake(self.view.bounds.size.width * (section), 0, self.view.bounds.size.width, self.view.bounds.size.height)];
         //ContentView.webView = [[WKWebView alloc] initWithFrame:self.view.bounds];
         ContentView.webView.navigationDelegate = self;
@@ -193,51 +188,13 @@
         [self searchInDataBase];
         return;
     }
-    
-}
-//- (void)loadMyView:(NSInteger)section andString:(NSString*)string{
-//    self.iView.scrollView.contentSize = CGSizeMake(self.view.bounds.size.width * (section + 1), 0);
-//    WKWebView* webView = [[WKWebView alloc] initWithFrame:CGRectMake(self.view.bounds.size.width * section , 0, self.view.bounds.size.width, self.view.bounds.size.height - 60)];
-//    [self.iView.scrollView addSubview:webView];
-//    [self.webSet addObject:string];
-//    webView.navigationDelegate = self;
-//    NSURL* url = [NSURL URLWithString:string];
-//    NSURLRequest* request = [NSURLRequest requestWithURL:url];
-//    [webView loadRequest:request];
-//}
-#pragma mark NetWork
-- (void)loadNewDate:(NSString*)str andSetcion:(NSInteger) section{
-    [[Manger sharedManger] newDateLoad:^(MainPageModel * _Nonnull model) {
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"changeModel" object:nil userInfo:@{@"model":model}];
-        dispatch_async(dispatch_get_main_queue(), ^{
-            for (int j = 0; j < model.stories.count; j++) {
-                NSInteger pageId = [model.stories[j] pageId];
-                NSNumber* number = [NSNumber numberWithInteger:pageId];
-                [self.ary addObject:number];
-            }
-            NSInteger loadPageId;
-            loadPageId = [self.ary[self.ary.count - model.stories.count] integerValue];
-            NSString* string = [NSString stringWithFormat:@"https://daily.zhihu.com/story/%ld", loadPageId];
-            WebContentView* ContentView = [[WebContentView alloc] initWithFrame:CGRectMake(self.view.bounds.size.width * (section), 0, self.view.bounds.size.width, self.view.bounds.size.height)];
-            
-            //ContentView.webView = [[WKWebView alloc] initWithFrame:self.view.bounds];
-            ContentView.webView.navigationDelegate = self;
-            [self.iView.scrollView addSubview:ContentView];
-            //[self.webSet addObject:string];
-            //ContentView.webView.navigationDelegate = self;
-            NSURL* url = [NSURL URLWithString:string];
-            NSURLRequest* request = [NSURLRequest requestWithURL:url];
-            [ContentView.webView loadRequest:request];
-            [self loadLabel:section andView:self.iView];
-        });
-    } andNsstring:str];
 }
 -(void) loadLabel:(NSInteger) section andView:(WebScrollView*) view{
     NSString* str = [NSString stringWithFormat:@"%ld", [self.ary[section] integerValue]];
     NSLog(@"%ld", [self.ary[section] integerValue]);
     NSNumber* number = self.ary[section];
     if (!self.newsModel[number]) {
-        [[Manger sharedManger] commentsDataLoad:^(NewsModel * _Nonnull model) {
+        [[NetworkingManger sharedManger] commentsDataLoad:^(NewsModel * _Nonnull model) {
             NSNumber* number = self.ary[section];
             self.newsModel[number] = model;
             NSLog(@"%@", self.newsModel);
@@ -249,12 +206,6 @@
         [self addTittleToButton:view andSection:section];
     }
     
-}
-#pragma mark WKWeb
-- (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation {
-    NSLog(@"网页加载完成");
-    self.loading = NO;
-    NSLog(@"1");
 }
 #pragma mark Button
 - (void)addTargetToButton:(WebScrollView*) view andSection:(NSInteger) section {
@@ -278,11 +229,11 @@
 }
 -(void)addLike:(UIButton*)btn {
     btn.selected = !btn.selected;
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"changeLike" object:nil userInfo:@{@"section":[NSNumber numberWithInteger:self.section], @"state":[NSNumber numberWithBool:btn.selected]}];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"changeLike" object:nil userInfo:@{@"section":[NSNumber numberWithInteger:self.section], @"state":[NSNumber numberWithBool:btn.selected], @"top":self.ary[self.section]}];
 }
 -(void)changeData:(UIButton*)btn {
     btn.selected = !btn.selected;
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"changeData" object:nil userInfo:@{@"section":[NSNumber numberWithInteger:self.section], @"state":[NSNumber numberWithBool:btn.selected]}];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"changeData" object:nil userInfo:@{@"section":[NSNumber numberWithInteger:self.section], @"state":[NSNumber numberWithBool:btn.selected], @"top":self.ary[self.section]}];
 }
 - (void)addTittleToButton:(WebScrollView*) view andSection:(NSInteger) section{
     int tmp = 0;
@@ -338,6 +289,49 @@
     likeButton.selected = starFlag;
     starButton.selected = selectFlag;
 }
+//- (void)loadMyView:(NSInteger)section andString:(NSString*)string{
+//    self.iView.scrollView.contentSize = CGSizeMake(self.view.bounds.size.width * (section + 1), 0);
+//    WKWebView* webView = [[WKWebView alloc] initWithFrame:CGRectMake(self.view.bounds.size.width * section , 0, self.view.bounds.size.width, self.view.bounds.size.height - 60)];
+//    [self.iView.scrollView addSubview:webView];
+//    [self.webSet addObject:string];
+//    webView.navigationDelegate = self;
+//    NSURL* url = [NSURL URLWithString:string];
+//    NSURLRequest* request = [NSURLRequest requestWithURL:url];
+//    [webView loadRequest:request];
+//}
+//#pragma mark NetWork
+//- (void)loadNewDate:(NSString*)str andSetcion:(NSInteger) section{
+//    [[Manger sharedManger] newDateLoad:^(MainPageModel * _Nonnull model) {
+//        [[NSNotificationCenter defaultCenter] postNotificationName:@"changeModel" object:nil userInfo:@{@"model":model}];
+//        dispatch_async(dispatch_get_main_queue(), ^{
+//            for (int j = 0; j < model.stories.count; j++) {
+//                NSInteger pageId = [model.stories[j] pageId];
+//                NSNumber* number = [NSNumber numberWithInteger:pageId];
+//                [self.ary addObject:number];
+//            }
+//            NSInteger loadPageId;
+//            loadPageId = [self.ary[self.ary.count - model.stories.count] integerValue];
+//            NSString* string = [NSString stringWithFormat:@"https://daily.zhihu.com/story/%ld", loadPageId];
+//            WebContentView* ContentView = [[WebContentView alloc] initWithFrame:CGRectMake(self.view.bounds.size.width * (section), 0, self.view.bounds.size.width, self.view.bounds.size.height)];
+//            
+//            //ContentView.webView = [[WKWebView alloc] initWithFrame:self.view.bounds];
+//            ContentView.webView.navigationDelegate = self;
+//            [self.iView.scrollView addSubview:ContentView];
+//            [self.webSet addObject:string];
+//            //ContentView.webView.navigationDelegate = self;
+//            NSURL* url = [NSURL URLWithString:string];
+//            NSURLRequest* request = [NSURLRequest requestWithURL:url];
+//            [ContentView.webView loadRequest:request];
+//        });
+//    } andNsstring:str];
+//}
+#pragma mark WKWeb
+- (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation {
+    NSLog(@"网页加载完成");
+    self.loading = NO;
+    NSLog(@"1");
+}
+
 /*
 #pragma mark - Navigation
 

@@ -5,9 +5,9 @@
 //  Created by nanxun on 2024/10/20.
 //
 
-#import "Manger.h"
+#import "NetworkingManger.h"
 static id sharedManger = nil;
-@implementation Manger
+@implementation NetworkingManger
 +(instancetype) sharedManger {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
@@ -16,7 +16,7 @@ static id sharedManger = nil;
     return sharedManger;
 }
 + (instancetype)allocWithZone:(struct _NSZone *)zone {
-    return [Manger sharedManger];
+    return [NetworkingManger sharedManger];
 }
 - (void)urlDataLoad:(successBlock)success {
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];

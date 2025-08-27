@@ -16,7 +16,6 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) UILabel* authorLabel;
 @property (nonatomic, strong) UIVisualEffectView* effectView;
 @property (nonatomic, strong) UIView* backView;
-// 在.h文件中添加属性
 @property (nonatomic, strong) CAGradientLayer *gradientLayer;
 -(void)setImageColor;
 @end

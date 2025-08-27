@@ -15,7 +15,7 @@ typedef void(^successBlock)(MainPageModel* model);
 typedef void(^success)(NewsModel* model);
 typedef void(^allComment)(CommentsModel* model);
 typedef void(^realComment)(NSMutableArray* ary);
-@interface Manger : NSObject
+@interface NetworkingManger : NSObject
 +(instancetype) sharedManger;
 - (void)urlDataLoad: (successBlock)success;
 - (void)newDateLoad: (successBlock)success andNsstring:(NSString*) string;

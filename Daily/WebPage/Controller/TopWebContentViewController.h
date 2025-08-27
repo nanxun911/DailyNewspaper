@@ -8,7 +8,7 @@
 #import <UIKit/UIKit.h>
 #import "WebContentView.h"
 #import "WebScrollView.h"
-#import "Manger.h"
+#import "NetworkingManger.h"
 #import "NewsModel.h"
 #import "CommentsViewController.h"
 #import "DataBaseManger.h"

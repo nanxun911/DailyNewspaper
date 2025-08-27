@@ -24,7 +24,7 @@
     [date judgeDate];
     self.dateModel = date;
 
-    Manger* manger = [Manger sharedManger];
+    NetworkingManger* manger = [NetworkingManger sharedManger];
 //    [manger urlDataLoad:^(MainPageModel * _Nonnull model) {
 //        
 //    }];
@@ -442,7 +442,7 @@
     //[self.iView.activity startAnimating];
     [self.iView.headActivity startAnimating];
     
-    [[Manger sharedManger] urlDataLoad:^(MainPageModel * _Nonnull model) {
+    [[NetworkingManger sharedManger] urlDataLoad:^(MainPageModel * _Nonnull model) {
         self.iModel = [NSMutableArray arrayWithObject:model];
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.iView.tableView reloadData];
@@ -499,7 +499,7 @@
         NSLog(@"执行第%ld个任务", i);
         str = [self.dateModel computingTime:self.dateModel.headString andDay:count - 1 + i];
         NSLog(@"每个任务对应的字符串%@", str);
-        [[Manger sharedManger] newDateLoad:^(MainPageModel * _Nonnull model) {
+        [[NetworkingManger sharedManger] newDateLoad:^(MainPageModel * _Nonnull model) {
             dispatch_async(queue, ^{
                 [lock lockWhenCondition:i];
                 [self.iModel addObject:model];

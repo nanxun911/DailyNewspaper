@@ -8,7 +8,7 @@
 #import <UIKit/UIKit.h>
 #import "MainPageView.h"
 #import "MainPageModel.h"
-#import "Manger.h"
+#import "NetworkingManger.h"
 #import "DateModel.h"
 #import "TopTableViewCell.h"
 #import "Masonry.h"

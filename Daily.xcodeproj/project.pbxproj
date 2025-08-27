@@ -24,7 +24,7 @@
 		E9323B7A2CC5E07D008C17CF /* MainPageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E9323B752CC5E07D008C17CF /* MainPageModel.m */; };
 		E9323B7D2CC5E0B8008C17CF /* MainPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = E9323B7C2CC5E0B8008C17CF /* MainPageView.m */; };
 		E9323B802CC5E131008C17CF /* MainPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9323B7F2CC5E131008C17CF /* MainPageViewController.m */; };
-		E9323B832CC5E161008C17CF /* Manger.m in Sources */ = {isa = PBXBuildFile; fileRef = E9323B822CC5E161008C17CF /* Manger.m */; };
+		E9323B832CC5E161008C17CF /* NetworkingManger.m in Sources */ = {isa = PBXBuildFile; fileRef = E9323B822CC5E161008C17CF /* NetworkingManger.m */; };
 		E9323B872CC5E19E008C17CF /* TopTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E9323B862CC5E19E008C17CF /* TopTableViewCell.m */; };
 		E9323B9D2CC63D02008C17CF /* DataView.m in Sources */ = {isa = PBXBuildFile; fileRef = E9323B9C2CC63D02008C17CF /* DataView.m */; };
 		E9323B9F2CC661D3008C17CF /* vertical_line.png in Resources */ = {isa = PBXBuildFile; fileRef = E9323B9E2CC661D3008C17CF /* vertical_line.png */; };
@@ -118,8 +118,8 @@
 		E9323B7C2CC5E0B8008C17CF /* MainPageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainPageView.m; sourceTree = "<group>"; };
 		E9323B7E2CC5E131008C17CF /* MainPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainPageViewController.h; sourceTree = "<group>"; };
 		E9323B7F2CC5E131008C17CF /* MainPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainPageViewController.m; sourceTree = "<group>"; };
-		E9323B812CC5E161008C17CF /* Manger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Manger.h; sourceTree = "<group>"; };
-		E9323B822CC5E161008C17CF /* Manger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Manger.m; sourceTree = "<group>"; };
+		E9323B812CC5E161008C17CF /* NetworkingManger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkingManger.h; sourceTree = "<group>"; };
+		E9323B822CC5E161008C17CF /* NetworkingManger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkingManger.m; sourceTree = "<group>"; };
 		E9323B852CC5E19E008C17CF /* TopTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopTableViewCell.h; sourceTree = "<group>"; };
 		E9323B862CC5E19E008C17CF /* TopTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopTableViewCell.m; sourceTree = "<group>"; };
 		E9323B9B2CC63D02008C17CF /* DataView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataView.h; sourceTree = "<group>"; };
@@ -264,37 +264,19 @@
 				E9323B352CC5DCEB008C17CF /* SceneDelegate.m */,
 				E9323B372CC5DCEB008C17CF /* ViewController.h */,
 				E9323B382CC5DCEB008C17CF /* ViewController.m */,
-				E9323B812CC5E161008C17CF /* Manger.h */,
-				E9323B822CC5E161008C17CF /* Manger.m */,
-				E9323BF22CD7B347008C17CF /* NSDate+JudgeDay.h */,
-				E9323BF32CD7B347008C17CF /* NSDate+JudgeDay.m */,
-				E9323BF92CDA5B8D008C17CF /* UITextView+JudgeHeight.h */,
-				E9323BFA2CDA5B8D008C17CF /* UITextView+JudgeHeight.m */,
-				E9323BFC2CDFA645008C17CF /* UIImage+JudgeColor.h */,
-				E9323BFD2CDFA645008C17CF /* UIImage+JudgeColor.m */,
-				E9323B662CC5DF76008C17CF /* Model */,
+				E98D56DD2E5EF20A003C1D09 /* CellHepler */,
+				E98D56DB2E5EF188003C1D09 /* Mangers */,
+				E98D56DC2E5EF1A8003C1D09 /* MainPage */,
+				E98D56E52E5EF3F5003C1D09 /* CommentPage */,
+				E98D56DE2E5EF23C003C1D09 /* WebPage */,
+				E98D56E92E5EF6E7003C1D09 /* StarPage */,
 				E9323B3A2CC5DCEB008C17CF /* Main.storyboard */,
 				E9323B3D2CC5DCED008C17CF /* Assets.xcassets */,
-				E9323B6A2CC5DFA5008C17CF /* View */,
 				E9323B3F2CC5DCED008C17CF /* LaunchScreen.storyboard */,
 				E9323B422CC5DCED008C17CF /* Info.plist */,
-				E9323B6E2CC5DFC1008C17CF /* Controller */,
 				E9323B432CC5DCED008C17CF /* main.m */,
+				E98D56EA2E5EFA91003C1D09 /* photo */,
 				E9323B842CC5E172008C17CF /* cell */,
-				E9323BB82CCCE4A9008C17CF /* pinglun.png */,
-				E9323C0B2CE38BB7008C17CF /* yueliang.png */,
-				E9323BF72CD8F266008C17CF /* pinglun-2.png */,
-				E9323BBA2CCCE4C4008C17CF /* fanhui-3.png */,
-				E9323BF52CD8F1D3008C17CF /* dianzan-2.png */,
-				E9F8EEED2CE61E510040ABA6 /* dianzan-3.png */,
-				E9323C0D2CE38BE6008C17CF /* shezhi-2.png */,
-				E9F8EEEB2CE6192D0040ABA6 /* shoucang-4.png */,
-				E9323BC62CCCE744008C17CF /* shoucang-3.png */,
-				E9F8F0A32D33B9AE0040ABA6 /* WechatIMG17.jpg */,
-				E9323BBC2CCCE4F4008C17CF /* dianzan.png */,
-				E9323B9E2CC661D3008C17CF /* vertical_line.png */,
-				E9323BC22CCCE55D008C17CF /* shangchuan-4.png */,
-				E9323BAE2CCA5B18008C17CF /* 1.png */,
 			);
 			path = Daily;
 			sourceTree = "<group>";
@@ -319,24 +301,6 @@
 		E9323B662CC5DF76008C17CF /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				E9323B712CC5E07D008C17CF /* DateModel.h */,
-				E9323B722CC5E07D008C17CF /* DateModel.m */,
-				E9323C592CE4D93F008C17CF /* DataBaseManger.h */,
-				E9323C5A2CE4D93F008C17CF /* DataBaseManger.m */,
-				E9323BD72CD111C3008C17CF /* CommentsModel.h */,
-				E9323BD82CD111C3008C17CF /* CommentsModel.m */,
-				E9323BE02CD3910E008C17CF /* CommentsConentModel.h */,
-				E9323BE12CD3910E008C17CF /* CommentsConentModel.m */,
-				E9323BE32CD39215008C17CF /* ContentModel.h */,
-				E9323BE42CD39215008C17CF /* ContentModel.m */,
-				E9323BDA2CD112DD008C17CF /* NewsModel.h */,
-				E9323BDB2CD112DD008C17CF /* NewsModel.m */,
-				E9323B762CC5E07D008C17CF /* MainPageModel.h */,
-				E9323B752CC5E07D008C17CF /* MainPageModel.m */,
-				E9323B702CC5E07D008C17CF /* SoriesModel.h */,
-				E9323B6F2CC5E07D008C17CF /* SoriesModel.m */,
-				E9323B732CC5E07D008C17CF /* TopModel.h */,
-				E9323B742CC5E07D008C17CF /* TopModel.m */,
 				E9323C5C2CE4F4D8008C17CF /* StarModel.h */,
 				E9323C5D2CE4F4D8008C17CF /* StarModel.m */,
 			);
@@ -346,20 +310,8 @@
 		E9323B6A2CC5DFA5008C17CF /* View */ = {
 			isa = PBXGroup;
 			children = (
-				E9323B7B2CC5E0B8008C17CF /* MainPageView.h */,
-				E9323B7C2CC5E0B8008C17CF /* MainPageView.m */,
-				E9323BB02CCCCFFB008C17CF /* WebContentView.h */,
-				E9323BB12CCCCFFB008C17CF /* WebContentView.m */,
-				E9323BDD2CD11CA6008C17CF /* WebScrollView.h */,
-				E9323BDE2CD11CA6008C17CF /* WebScrollView.m */,
-				E9323BE62CD396F3008C17CF /* CommentsView.h */,
-				E9323BE72CD396F3008C17CF /* CommentsView.m */,
-				E9323B9B2CC63D02008C17CF /* DataView.h */,
-				E9323B9C2CC63D02008C17CF /* DataView.m */,
-				E9323BA92CC8EA68008C17CF /* HeadView.h */,
-				E9323BAA2CC8EA68008C17CF /* HeadView.m */,
-				E9323BA62CC7986C008C17CF /* TopContentView.h */,
-				E9323BA72CC7986C008C17CF /* TopContentView.m */,
+				E9323C122CE393A7008C17CF /* StarTableViewCell.h */,
+				E9323C132CE393A7008C17CF /* StarTableViewCell.m */,
 				E9323BFF2CE364BE008C17CF /* PersonView.h */,
 				E9323C002CE364BE008C17CF /* PersonView.m */,
 				E9323C082CE36EEB008C17CF /* PesonHeadView.h */,
@@ -373,14 +325,6 @@
 		E9323B6E2CC5DFC1008C17CF /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				E9323B7E2CC5E131008C17CF /* MainPageViewController.h */,
-				E9323B7F2CC5E131008C17CF /* MainPageViewController.m */,
-				E9323BB32CCCD366008C17CF /* WebContentViewController.h */,
-				E9323BB42CCCD366008C17CF /* WebContentViewController.m */,
-				E9323BD42CCFBB29008C17CF /* TopWebContentViewController.h */,
-				E9323BD52CCFBB29008C17CF /* TopWebContentViewController.m */,
-				E9323BEC2CD39CC2008C17CF /* CommentsViewController.h */,
-				E9323BED2CD39CC2008C17CF /* CommentsViewController.m */,
 				E9323C022CE364DD008C17CF /* PersonViewController.h */,
 				E9323C032CE364DD008C17CF /* PersonViewController.m */,
 				E9323C052CE3650C008C17CF /* StarViewController.h */,
@@ -392,16 +336,200 @@
 		E9323B842CC5E172008C17CF /* cell */ = {
 			isa = PBXGroup;
 			children = (
-				E9323B852CC5E19E008C17CF /* TopTableViewCell.h */,
-				E9323B862CC5E19E008C17CF /* TopTableViewCell.m */,
-				E9323BA02CC66B5C008C17CF /* ContentTableViewCell.h */,
-				E9323BA12CC66B5C008C17CF /* ContentTableViewCell.m */,
-				E9323BE92CD39A44008C17CF /* CommentsTableViewCell.h */,
-				E9323BEA2CD39A44008C17CF /* CommentsTableViewCell.m */,
-				E9323C122CE393A7008C17CF /* StarTableViewCell.h */,
-				E9323C132CE393A7008C17CF /* StarTableViewCell.m */,
 			);
 			path = cell;
+			sourceTree = "<group>";
+		};
+		E98D56DB2E5EF188003C1D09 /* Mangers */ = {
+			isa = PBXGroup;
+			children = (
+				E9323B812CC5E161008C17CF /* NetworkingManger.h */,
+				E9323B822CC5E161008C17CF /* NetworkingManger.m */,
+				E9323C592CE4D93F008C17CF /* DataBaseManger.h */,
+				E9323C5A2CE4D93F008C17CF /* DataBaseManger.m */,
+			);
+			path = Mangers;
+			sourceTree = "<group>";
+		};
+		E98D56DC2E5EF1A8003C1D09 /* MainPage */ = {
+			isa = PBXGroup;
+			children = (
+				E98D56E02E5EF259003C1D09 /* View */,
+				E98D56E12E5EF279003C1D09 /* Controller */,
+				E98D56DF2E5EF251003C1D09 /* Model */,
+			);
+			path = MainPage;
+			sourceTree = "<group>";
+		};
+		E98D56DD2E5EF20A003C1D09 /* CellHepler */ = {
+			isa = PBXGroup;
+			children = (
+				E9323BF22CD7B347008C17CF /* NSDate+JudgeDay.h */,
+				E9323BF32CD7B347008C17CF /* NSDate+JudgeDay.m */,
+				E9323BFA2CDA5B8D008C17CF /* UITextView+JudgeHeight.m */,
+				E9323BF92CDA5B8D008C17CF /* UITextView+JudgeHeight.h */,
+				E9323BFC2CDFA645008C17CF /* UIImage+JudgeColor.h */,
+				E9323BFD2CDFA645008C17CF /* UIImage+JudgeColor.m */,
+			);
+			path = CellHepler;
+			sourceTree = "<group>";
+		};
+		E98D56DE2E5EF23C003C1D09 /* WebPage */ = {
+			isa = PBXGroup;
+			children = (
+				E98D56E32E5EF33C003C1D09 /* View */,
+				E98D56E42E5EF343003C1D09 /* Controller */,
+				E98D56E22E5EF335003C1D09 /* Model */,
+			);
+			path = WebPage;
+			sourceTree = "<group>";
+		};
+		E98D56DF2E5EF251003C1D09 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E9323B702CC5E07D008C17CF /* SoriesModel.h */,
+				E9323B6F2CC5E07D008C17CF /* SoriesModel.m */,
+				E9323B732CC5E07D008C17CF /* TopModel.h */,
+				E9323B742CC5E07D008C17CF /* TopModel.m */,
+				E9323B712CC5E07D008C17CF /* DateModel.h */,
+				E9323B722CC5E07D008C17CF /* DateModel.m */,
+				E9323B762CC5E07D008C17CF /* MainPageModel.h */,
+				E9323B752CC5E07D008C17CF /* MainPageModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E98D56E02E5EF259003C1D09 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E9323B9B2CC63D02008C17CF /* DataView.h */,
+				E9323B9C2CC63D02008C17CF /* DataView.m */,
+				E9323BA92CC8EA68008C17CF /* HeadView.h */,
+				E9323BAA2CC8EA68008C17CF /* HeadView.m */,
+				E9323BA62CC7986C008C17CF /* TopContentView.h */,
+				E9323BA72CC7986C008C17CF /* TopContentView.m */,
+				E9323B7B2CC5E0B8008C17CF /* MainPageView.h */,
+				E9323B7C2CC5E0B8008C17CF /* MainPageView.m */,
+				E9323BA12CC66B5C008C17CF /* ContentTableViewCell.m */,
+				E9323BA02CC66B5C008C17CF /* ContentTableViewCell.h */,
+				E9323B852CC5E19E008C17CF /* TopTableViewCell.h */,
+				E9323B862CC5E19E008C17CF /* TopTableViewCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E98D56E12E5EF279003C1D09 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E9323B7E2CC5E131008C17CF /* MainPageViewController.h */,
+				E9323B7F2CC5E131008C17CF /* MainPageViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		E98D56E22E5EF335003C1D09 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E9323BDA2CD112DD008C17CF /* NewsModel.h */,
+				E9323BDB2CD112DD008C17CF /* NewsModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E98D56E32E5EF33C003C1D09 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E9323BB02CCCCFFB008C17CF /* WebContentView.h */,
+				E9323BB12CCCCFFB008C17CF /* WebContentView.m */,
+				E9323BDD2CD11CA6008C17CF /* WebScrollView.h */,
+				E9323BDE2CD11CA6008C17CF /* WebScrollView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E98D56E42E5EF343003C1D09 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E9323BB32CCCD366008C17CF /* WebContentViewController.h */,
+				E9323BB42CCCD366008C17CF /* WebContentViewController.m */,
+				E9323BD42CCFBB29008C17CF /* TopWebContentViewController.h */,
+				E9323BD52CCFBB29008C17CF /* TopWebContentViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		E98D56E52E5EF3F5003C1D09 /* CommentPage */ = {
+			isa = PBXGroup;
+			children = (
+				E98D56E62E5EF412003C1D09 /* View */,
+				E98D56E72E5EF41A003C1D09 /* Model */,
+				E98D56E82E5EF420003C1D09 /* Controller */,
+			);
+			path = CommentPage;
+			sourceTree = "<group>";
+		};
+		E98D56E62E5EF412003C1D09 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E9323BE92CD39A44008C17CF /* CommentsTableViewCell.h */,
+				E9323BEA2CD39A44008C17CF /* CommentsTableViewCell.m */,
+				E9323BE62CD396F3008C17CF /* CommentsView.h */,
+				E9323BE72CD396F3008C17CF /* CommentsView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E98D56E72E5EF41A003C1D09 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E9323BD72CD111C3008C17CF /* CommentsModel.h */,
+				E9323BD82CD111C3008C17CF /* CommentsModel.m */,
+				E9323BE02CD3910E008C17CF /* CommentsConentModel.h */,
+				E9323BE12CD3910E008C17CF /* CommentsConentModel.m */,
+				E9323BE32CD39215008C17CF /* ContentModel.h */,
+				E9323BE42CD39215008C17CF /* ContentModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E98D56E82E5EF420003C1D09 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E9323BEC2CD39CC2008C17CF /* CommentsViewController.h */,
+				E9323BED2CD39CC2008C17CF /* CommentsViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		E98D56E92E5EF6E7003C1D09 /* StarPage */ = {
+			isa = PBXGroup;
+			children = (
+				E9323B6E2CC5DFC1008C17CF /* Controller */,
+				E9323B662CC5DF76008C17CF /* Model */,
+				E9323B6A2CC5DFA5008C17CF /* View */,
+			);
+			path = StarPage;
+			sourceTree = "<group>";
+		};
+		E98D56EA2E5EFA91003C1D09 /* photo */ = {
+			isa = PBXGroup;
+			children = (
+				E9323BB82CCCE4A9008C17CF /* pinglun.png */,
+				E9323C0B2CE38BB7008C17CF /* yueliang.png */,
+				E9323BF72CD8F266008C17CF /* pinglun-2.png */,
+				E9323BBA2CCCE4C4008C17CF /* fanhui-3.png */,
+				E9323BF52CD8F1D3008C17CF /* dianzan-2.png */,
+				E9F8EEED2CE61E510040ABA6 /* dianzan-3.png */,
+				E9323C0D2CE38BE6008C17CF /* shezhi-2.png */,
+				E9F8EEEB2CE6192D0040ABA6 /* shoucang-4.png */,
+				E9323BC62CCCE744008C17CF /* shoucang-3.png */,
+				E9F8F0A32D33B9AE0040ABA6 /* WechatIMG17.jpg */,
+				E9323BBC2CCCE4F4008C17CF /* dianzan.png */,
+				E9323B9E2CC661D3008C17CF /* vertical_line.png */,
+				E9323BC22CCCE55D008C17CF /* shangchuan-4.png */,
+				E9323BAE2CCA5B18008C17CF /* 1.png */,
+			);
+			path = photo;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -603,7 +731,7 @@
 				E9323B772CC5E07D008C17CF /* SoriesModel.m in Sources */,
 				E9323B792CC5E07D008C17CF /* TopModel.m in Sources */,
 				E9323C5B2CE4D93F008C17CF /* DataBaseManger.m in Sources */,
-				E9323B832CC5E161008C17CF /* Manger.m in Sources */,
+				E9323B832CC5E161008C17CF /* NetworkingManger.m in Sources */,
 				E9323B392CC5DCEB008C17CF /* ViewController.m in Sources */,
 				E9323BB52CCCD366008C17CF /* WebContentViewController.m in Sources */,
 				E9323B332CC5DCEB008C17CF /* AppDelegate.m in Sources */,

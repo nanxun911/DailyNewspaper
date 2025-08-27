@@ -71,8 +71,6 @@
     // 最大允许的高度
     CGFloat titleMaxHeight = singleLineHeight * nums;
 
-    NSLog(@"Content width: %lf", width);
-    NSLog(@"Actual height: %lf, Max height: %lf", titleActualHeight, titleMaxHeight);
 
     return titleActualHeight > titleMaxHeight;
 }

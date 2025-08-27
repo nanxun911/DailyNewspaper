@@ -9,7 +9,7 @@
 #import <WebKit/WebKit.h>
 #import "WebContentView.h"
 #import "WebScrollView.h"
-#import "Manger.h"
+#import "NetworkingManger.h"
 #import "CommentsViewController.h"
 #import "NewsModel.h"
 #import "DateModel.h"

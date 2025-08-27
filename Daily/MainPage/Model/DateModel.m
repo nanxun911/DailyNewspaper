@@ -73,7 +73,6 @@
         date = date - day;
         day = 31;
         while (day - date <= 0 && month > 1) {
-            NSLog(@"1222");
             month -= 1;
             date = date - day;
             if (date < 0) {
